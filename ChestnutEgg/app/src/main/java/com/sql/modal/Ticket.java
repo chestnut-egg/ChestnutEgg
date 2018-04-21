@@ -7,7 +7,6 @@ import org.litepal.crud.DataSupport;
  */
 public class Ticket extends DataSupport{
 
-
     private String order_number;
     private String train_number;
     private String departure_date;
@@ -16,8 +15,9 @@ public class Ticket extends DataSupport{
     private String destination_time;
     private String destination_place;
     private String seat_number;
+    private int isshow;
 
-    public Ticket(String order_number, String train_number, String departure_date, String departure_time, String departure_place, String destination_time, String destination_place, String seat_number) {
+    public Ticket(String order_number, String train_number, String departure_date, String departure_time, String departure_place, String destination_time, String destination_place, String seat_number,int isshow) {
         this.order_number = order_number;
         this.train_number = train_number;
         this.departure_date = departure_date;
@@ -26,6 +26,15 @@ public class Ticket extends DataSupport{
         this.destination_time = destination_time;
         this.destination_place = destination_place;
         this.seat_number = seat_number;
+        this.isshow = isshow;
+    }
+
+    public int getIsshow() {
+        return isshow;
+    }
+
+    public void setIsshow(int isshow) {
+        this.isshow = isshow;
     }
 
     public String getDeparture_date() {

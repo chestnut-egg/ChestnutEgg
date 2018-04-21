@@ -53,6 +53,13 @@ dependencies {
     compile 'com.github.clans:fab:1.6.4'
     //compile 'com.github.wangjiegulu:rfab:2.0.0'
 
+    //edit
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    //time
+    //compile 'com.wdullaer:materialdatetimepicker:3.5.1'
+
+
 
 }
 

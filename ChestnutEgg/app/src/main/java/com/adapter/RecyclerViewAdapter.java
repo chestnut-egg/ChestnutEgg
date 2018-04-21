@@ -14,7 +14,10 @@ import com.example.dan.chestnutegg.R;
 import com.example.dan.chestnutegg.TicketActivity;
 import com.sql.modal.Ticket;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -90,7 +93,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         personViewHolder.destination_place.setText(tickets.get(i).getDestination_place());
         personViewHolder.seat_number.setText(tickets.get(i).getSeat_number());
 
-        //计算时间
+        //当前时间
         Calendar calendar = Calendar.getInstance();
         int now_year = calendar.get(Calendar.YEAR);
         int now_month = calendar.get(Calendar.MONTH)+1;
@@ -152,52 +155,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         }
 
+        personViewHolder.later_time.setText(different(month,day,hour,minute));
 
-
-        int a = month - now_month;
-        if(a > 0){
-            //几个月后
-            personViewHolder.later_time.setText(a+"月后");
-        }else if(a == 0){
-            int b = day - now_day;
-            if(b > 0){
-                //几天后
-                personViewHolder.later_time.setText(b+"天后");
-            }else if(b == 0){
-                int c = hour - now_hour;
-                if(c > 0){
-                    //几小时后
-                    personViewHolder.later_time.setText(c+"小时后");
-                }else if(c == 0){
-                    int d = minute - now_minute;
-                    if(d > 0){
-                        //几分钟后
-                        personViewHolder.later_time.setText(d+"分钟后");
-                    }else if(d == 0){
-                        personViewHolder.later_time.setText("即将完成");
-                    }else{
-                        personViewHolder.later_time.setText("已过期");
-                    }
-                }else{
-                    personViewHolder.later_time.setText("已过期");
-                }
-            }else{
-                personViewHolder.later_time.setText("已过期");
-            }
-        }else{
-            personViewHolder.later_time.setText("已过期");
-        }
 
 
         //为btn_share btn_readMore cardView设置点击事件
-        personViewHolder.card_train.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context,TicketActivity.class);
-                intent.putExtra("order_number",tickets.get(j).getOrder_number());
-                context.startActivity(intent);
-            }
-        });
+//        personViewHolder.card_train.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context,TicketActivity.class);
+//                intent.putExtra("order_number",tickets.get(j).getOrder_number());
+//                context.startActivity(intent);
+//            }
+//        });
 
         personViewHolder.share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,6 +191,82 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         });
 
 
+    }
+
+
+    public static String different(int month,int day,int hour,int minute){
+
+        String diff = "";
+
+        Calendar calendar = Calendar.getInstance();
+        int now_year = calendar.get(Calendar.YEAR);
+        int now_month = calendar.get(Calendar.MONTH)+1;
+        int now_day = calendar.get(Calendar.DAY_OF_MONTH);
+        int now_hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int now_minute = calendar.get(Calendar.MINUTE);
+
+        String date_str = ""+now_year+"-"+month+"-"+day+" "+hour+":"+minute+":00";
+
+        String date_now = ""+now_year+"-"+now_month+"-"+now_day+" "+now_hour+":"+now_minute+":00";
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        try
+        {
+            Date date2 = format.parse(date_str);
+            Date date = format.parse(date_now);
+
+            int diff_num = differentDays(date,date2);
+
+
+            if(diff_num > 0)
+                diff = differentDays(date,date2)+"天后";
+            else if(diff_num < 0)
+                diff = -differentDays(date,date2)+"天前";
+            else{
+                //相差不到一天
+                int diffhour_num = differentHour(date,date2);
+                if(diffhour_num > 0)
+                    diff = differentHour(date,date2)+"小时后";
+                else if(diffhour_num < 0)
+                    diff = -differentHour(date,date2)+"小时前";
+                else{
+                    //相差不到一小时
+                    int diffminute_num = differentMinute(date,date2);
+                    if(diffminute_num > 0)
+                        diff = differentMinute(date,date2)+"分钟后";
+                    else if(diffminute_num < 0)
+                        diff = -differentMinute(date,date2)+"分钟前";
+                    else{
+                        //到达时间
+                        diff = "时间到";
+                    }
+                }
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return diff;
+    }
+
+    public static int differentDays(Date date1, Date date2)
+    {
+        int days = (int) ((date2.getTime() - date1.getTime()) / (1000*3600*24));
+        return days;
+    }
+
+    public static int differentHour(Date date1, Date date2)
+    {
+        int days = (int) ((date2.getTime() - date1.getTime()) / (1000*3600));
+        return days;
+    }
+
+    public static int differentMinute(Date date1, Date date2)
+    {
+        int days = (int) ((date2.getTime() - date1.getTime()) / (1000*60));
+        return days;
     }
 
     @Override

@@ -72,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.home_grey_24x24, "Home"))
-                .addItem(new BottomNavigationItem(R.drawable.home_white_24x24, "Books"))
+                .addItem(new BottomNavigationItem(R.drawable.home_grey_24x24, "便签"))
+                .addItem(new BottomNavigationItem(R.drawable.train_white_24x24, "火车"))
                 .setMode(BottomNavigationBar.MODE_SHIFTING)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
                 .setActiveColor("#519773")
                 .setBarBackgroundColor("#F3EDED")
-                .setFirstSelectedPosition(0)
+                .setFirstSelectedPosition(1)
                 .initialise();
 
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
@@ -89,12 +89,13 @@ public class MainActivity extends AppCompatActivity {
 
                     case 0:
                         Log.i("switch", "0");
+                        Intent intent_1 = new Intent(MainActivity.this, TaskActivity.class);
+                        startActivity(intent_1);
                         break;
 
                     case 1:
                         Log.i("switch", "1");
-                        Intent intent_1 = new Intent(MainActivity.this, TaskActivity.class);
-                        startActivity(intent_1);
+
                         break;
 
                 }
@@ -124,16 +125,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDatabase() {
         //向数据库插入数据
-        new Ticket("E001","K740","11月21日","21:30","成都","","嘉兴","11车21号下铺").save();
-        new Ticket("E002","K741","11月22日","21:30","成都","","嘉兴","11车21号下铺").save();
-        new Ticket("E003","K742","11月23日","21:30","成都","","嘉兴","11车21号下铺").save();
-        new Ticket("E004","K743","11月24日","21:31","成都","","嘉兴","12车12号下铺").save();
+        new Ticket("E001","K740","11月21日","21:30","成都","","嘉兴","11车21号下铺",1).save();
+        new Ticket("E002","K741","11月22日","21:30","成都","","嘉兴","11车21号下铺",1).save();
+        new Ticket("E003","K742","11月23日","21:30","成都","","嘉兴","11车21号下铺",1).save();
+        new Ticket("E004","K743","11月24日","21:31","成都","","嘉兴","12车12号下铺",1).save();
     }
 
     private void initPersonData() {
         tickets = new ArrayList<>();
         //添加至界面
-        tickets = DataSupport.findAll(Ticket.class);
+        //tickets = DataSupport.findAll(Ticket.class);
+        tickets = DataSupport.where("isshow == ?","1").find(Ticket.class);
         Collections.reverse(tickets);
     }
 

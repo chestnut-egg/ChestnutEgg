@@ -167,7 +167,7 @@ public class SMSToDatabase extends IntentService {
             Log.i("departure_time", departure_time);
             Log.i("departure_place", departure_place);
 
-            new Ticket(order_number,train_number,departure_date,departure_time,departure_place,"","",seat_number).save();
+            new Ticket(order_number,train_number,departure_date,departure_time,departure_place,"","",seat_number,1).save();
 
             Log.i("service", "已经存入数据库");
 

@@ -9,7 +9,7 @@
 >
 
     <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/plan_title"
+            android:id="@+id/fix_title"
             android:paddingTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
     />
 
     <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/plan_content"
+            android:id="@+id/fix_content"
             android:paddingTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
 
 
     <Button
-            android:id="@+id/time"
+            android:id="@+id/fix_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -47,7 +47,7 @@
     />
 
     <Button
-            android:id="@+id/sure"
+            android:id="@+id/fix_sure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"

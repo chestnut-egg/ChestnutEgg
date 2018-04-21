@@ -9,6 +9,7 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:background="#E1F1F6"
         android:id="@+id/activity_task"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,18 +21,27 @@
 
 
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-                                            android:background="#E1F1F6"
+
                                             android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginBottom="40dp"
                                             android:id="@+id/rv_task"/>
 
 
+    <!-- 底部导航栏-->
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+            android:layout_gravity="bottom"
+            android:id="@+id/bottom_navigation_bar_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+    />
     <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="49dp"
             android:layout_marginLeft="10dp"
             fab:menu_fab_size="normal"
             fab:menu_showShadow="true"
@@ -67,7 +77,8 @@
             fab:menu_openDirection="up"
             fab:menu_backgroundColor="@android:color/transparent"
             fab:menu_fab_label=""
-            android:layout_alignParentBottom="true" android:layout_alignParentEnd="true">
+
+            android:layout_alignBottom="@+id/rv_task" android:layout_alignParentEnd="true">
         <!--fab:menu_labels_style="@style/YourCustomLabelsStyle"-->
         <!--fab:menu_fab_show_animation="@anim/my_show_animation"
         fab:menu_fab_hide_animation="@anim/my_hide_animation"-->
@@ -81,15 +92,6 @@
                 fab:fab_label="add" />
 
     </com.github.clans.fab.FloatingActionMenu>
-
-
-    <!-- 底部导航栏-->
-    <com.ashokvarma.bottomnavigation.BottomNavigationBar
-            android:layout_gravity="bottom"
-            android:id="@+id/bottom_navigation_bar_task"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"/>
 
 
 </RelativeLayout>

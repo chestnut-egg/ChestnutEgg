@@ -2,11 +2,11 @@
 <litepal>
     <dbname value="chestnut"></dbname>
 
-    <version value="1"></version>
+    <version value="4"></version>
 
     <list>
         <mapping class="com.sql.modal.Ticket"></mapping>
-
+        <mapping class="com.sql.modal.Task"></mapping>
     </list>
 
 </litepal>
