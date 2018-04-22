@@ -90,8 +90,9 @@ public class TaskActivity extends AppCompatActivity {
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar_task);
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.home_grey_24x24, "便签"))
+                .addItem(new BottomNavigationItem(R.drawable.task_white_24x24, "便签"))
                 .addItem(new BottomNavigationItem(R.drawable.train_white_24x24, "火车"))
+                .addItem(new BottomNavigationItem(R.drawable.smile_white_24x24, "生活"))
                 .setMode(BottomNavigationBar.MODE_SHIFTING)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
                 .setActiveColor("#519773")
@@ -111,6 +112,11 @@ public class TaskActivity extends AppCompatActivity {
                     case 1:
                         Intent intent_0 = new Intent(TaskActivity.this, MainActivity.class);
                         startActivity(intent_0);
+                        break;
+
+                    case 2:
+                        Intent intent_2 = new Intent(TaskActivity.this, LifeActivity.class);
+                        startActivity(intent_2);
                         break;
 
                 }

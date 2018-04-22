@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 mPullToRefreshView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refresh();
+                        refresh_ticket();
                         mPullToRefreshView.setRefreshing(false);
                     }
                 }, 1500);
@@ -72,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.home_grey_24x24, "便签"))
+                .addItem(new BottomNavigationItem(R.drawable.task_white_24x24, "便签"))
                 .addItem(new BottomNavigationItem(R.drawable.train_white_24x24, "火车"))
+                .addItem(new BottomNavigationItem(R.drawable.smile_white_24x24, "生活"))
                 .setMode(BottomNavigationBar.MODE_SHIFTING)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
                 .setActiveColor("#519773")
@@ -95,7 +96,12 @@ public class MainActivity extends AppCompatActivity {
 
                     case 1:
                         Log.i("switch", "1");
+                        break;
 
+                    case 2:
+                        Log.i("switch", "2");
+                        Intent intent_2 = new Intent(MainActivity.this, LifeActivity.class);
+                        startActivity(intent_2);
                         break;
 
                 }
@@ -115,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //刷新activity
-    public void refresh() {
+    public void refresh_ticket() {
 
         finish();
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
