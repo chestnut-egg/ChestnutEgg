@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.yalantis.phoenix.PullToRefreshView
@@ -112,4 +113,184 @@
 </RelativeLayout>
 
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.yalantis.phoenix.PullToRefreshView
+        xmlns:fab="http://schemas.android.com/apk/res-auto" android:id="@+id/refresh_life"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_life"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.dan.chestnutegg.LifeActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+
+
+    >
+
+        <android.support.v7.widget.CardView
+                android:id="@+id/card_life"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#FCE6EA"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+            <TextView
+                    android:id="@+id/life_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="嘉兴"
+                    android:textSize="20sp" />
+
+            <View
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="65dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#aa000000" />
+
+            <TextView
+                    android:id="@+id/life_cond_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="10dp"
+                    android:text="晴"
+                    android:textSize="20sp" />
+
+            <TextView
+                    android:id="@+id/life_tmp_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="当前温度：3℃"
+                    android:textSize="20sp" />
+
+
+
+            <Button
+                    android:id="@+id/life_weather_share"
+                    android:text="分享"
+                    android:background="#00000000"
+                    android:textColor="#7AD3E0"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="120dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            <Button
+                    android:id="@+id/life_weather_more"
+                    android:background="#00000000"
+                    android:textColor="#B3E9D8"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="120dp"
+                    android:text="更多"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+                android:id="@+id/card_orc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#FCE6EA"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+            <TextView
+                    android:id="@+id/life_orc_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="图片识别"
+                    android:textSize="20sp" />
+
+            <View
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="65dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#aa000000" />
+
+
+            <TextView
+                    android:id="@+id/life_orc_context"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="点击可进行图片识别"
+                    android:textSize="20sp" />
+
+
+
+            <Button
+                    android:id="@+id/life_orc_share"
+                    android:text=""
+                    android:background="#00000000"
+                    android:textColor="#7AD3E0"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="120dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            <Button
+                    android:id="@+id/life_orc_in"
+                    android:background="#00000000"
+                    android:textColor="#B3E9D8"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="120dp"
+                    android:text="开始识别"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+    <!-- 底部导航栏-->
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+            android:layout_gravity="bottom"
+            android:id="@+id/bottom_navigation_bar_life"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+    />
+
+
+</RelativeLayout>
+
+
+>>>>>>> 增加图片识别功能
 </com.yalantis.phoenix.PullToRefreshView>

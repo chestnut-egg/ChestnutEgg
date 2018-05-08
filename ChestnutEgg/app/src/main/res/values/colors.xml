@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#B3E9D8</color>
@@ -5,3 +6,12 @@
     <color name="colorAccent">#B3E9D8</color>
     <color name="green">#B3E9D8</color>
 </resources>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B3E9D8</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#B3E9D8</color>
+    <color name="green">#B3E9D8</color>
+</resources>
+>>>>>>> 增加图片识别功能

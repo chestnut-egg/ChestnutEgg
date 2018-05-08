@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 include ':app'
+=======
+include ':app'
+>>>>>>> 增加图片识别功能

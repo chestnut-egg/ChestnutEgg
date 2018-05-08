@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--android:paddingTop="24dp"-->
@@ -45,3 +46,52 @@
 
 
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--android:paddingTop="24dp"-->
+
+
+
+<com.yalantis.phoenix.PullToRefreshView
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <RelativeLayout
+                android:layout_width="match_parent" android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                                                        android:background="#E1F1F6"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:id="@+id/rv"/>
+
+                <!-- 底部导航栏-->
+                <com.ashokvarma.bottomnavigation.BottomNavigationBar
+                        android:layout_gravity="bottom"
+                        android:id="@+id/bottom_navigation_bar"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+
+</com.yalantis.phoenix.PullToRefreshView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 增加图片识别功能

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
@@ -61,3 +62,68 @@
 
 
 </LinearLayout>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+
+
+>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/fix_title"
+            android:paddingTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="待完成的任务"
+            app:met_primaryColor="@color/green"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="待完成的任务"
+            app:met_maxCharacters="10"
+            app:met_helperText="不要超过10个字符"
+    />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/fix_content"
+            android:paddingTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="备注"
+            app:met_primaryColor="@color/green"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="备注"
+
+    />
+
+
+    <Button
+            android:id="@+id/fix_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:text="请选择日期"
+            android:textColor="@color/green"
+            android:textSize="20dp"
+    />
+
+    <Button
+            android:id="@+id/fix_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="right"
+            android:text="确定"
+            android:textSize="23dp"
+            android:textColor="@color/green"
+    />
+
+
+
+</LinearLayout>
+>>>>>>> 增加图片识别功能
